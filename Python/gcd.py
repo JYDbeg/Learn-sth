@@ -2,11 +2,9 @@ q=0
 def gcd(a,b):
     global q
     if b>a:
-        d = b//a
         r = b% a
         k=a
     else:
-        d = a//b
         r = a%b
         k=b
     q+=1
