@@ -1,13 +1,9 @@
-from re import S
 import time
-from pyquery import PyQuery as pq
 import pandas as pd 
 import chromedriver_binary 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from bs4 import BeautifulSoup as bs
 driver = webdriver.Chrome()
-import math
 
 df=pd.read_excel('sample.xlsx',sheet_name=0,index_col=0)
 
