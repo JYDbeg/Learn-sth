@@ -1,0 +1,11 @@
+*{text-align: center;}
+body{text-align: center;margin:0 12vw;}
+.btn{border: 1px solid #0085ff;padding:5px;}
+.btn_container{display: flex;justify-content: center;}
+.icon{height: 16px;width: 16px;}
+.getWindow{border-bottom: 1px dashed #000;margin: 50px 0;background-color:rgba(240, 237, 212, 0.555)}
+button{border: 1px solid #0085ff;margin-left:15px;}
+.button{height: 20px;}
+button:hover{border: 1px solid rgba(0, 135, 255, 0.8);background-color:rgba(255, 255, 255, 0.144);cursor: pointer;}
+
+li{list-style: none;}

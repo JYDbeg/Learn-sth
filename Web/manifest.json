@@ -1,0 +1,13 @@
+{
+    "name": "Save tabs",
+    "description": "save tabs  of active window",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["tabs","storage","sessions"],
+    "action": {},
+    "background":
+    {
+        "service_worker":  "background.js" 
+    }
+    
+  }
