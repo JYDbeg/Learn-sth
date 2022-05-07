@@ -17,7 +17,7 @@ class ClickButton extends React.Component {
                     <IconButton colorScheme='twitter' icon={<FaTwitter />} aria-label='Tweet this quote'
                         size='lg' >
                     </IconButton></Link><Spacer />
-                <Button onClick={() => { this.props.parentFunc(); this.props.changeColor() }} colorScheme='teal' variant='solid' size='md'>New Quote
+                <Button onClick={() => { this.props.parentFunc(); this.props.changeColor() }} bgColor={`rgb(${this.props.bgc[0]},${this.props.bgc[1]},${this.props.bgc[2]})`} color={this.props.txc}  variant='solid' size='md'>New Quote
               </Button>
             </HStack>
         );
@@ -49,12 +49,12 @@ class QuoteContainer extends React.Component {
         
         return (
             <Center>
-                <Box p={4} mt="250px" w="800px" fontSize="10px" bgColor={this.props.bgc} borderRadius="50px" >
-                    <Heading color={`rgb(${this.props.txc[0]},${this.props.txc[1]},${this.props.txc[2]})`}><VscQuote color={`rgb(${this.props.txc[0]},${this.props.txc[1]},${this.props.txc[2]})`} bgColor={this.props.bgc}/>
+                <Box p={4} mt="15%" w="600px"  bgColor={this.props.bgc} borderRadius="50px" >
+                    <Heading fontSize="40px" color={`rgb(${this.props.txc[0]},${this.props.txc[1]},${this.props.txc[2]})`}><VscQuote color={`rgb(${this.props.txc[0]},${this.props.txc[1]},${this.props.txc[2]})`} bgColor={this.props.bgc}/>
                 
                     {this.props.quotes[this.state.index].quote}</Heading>
-                <Flex mt = "40px" mb ="40px"><Spacer /><Heading color={`rgb(${this.props.txc[0]},${this.props.txc[1]},${this.props.txc[2]})`}>Author:{this.props.quotes[this.state.index].author}</Heading></Flex>
-                <ClickButton parentFunc={this.handleClick} twitterShareFunc={this.twitterShare} changeColor={this.props.changeColor} />
+                    <Flex mt="40px" mb="40px"><Spacer /><Heading fontSize="25px" color={`rgb(${this.props.txc[0]},${this.props.txc[1]},${this.props.txc[2]})`}>Author:{this.props.quotes[this.state.index].author}</Heading></Flex>
+                    <ClickButton parentFunc={this.handleClick} twitterShareFunc={this.twitterShare} changeColor={this.props.changeColor} txc={this.props.bgc} bgc={this.props.txc} />
                 </Box></Center>
         );
     }
@@ -86,7 +86,7 @@ class ContentsContainer extends React.Component {
   
         if (this.state.quotes) {
             return (
-                <Container >
+                <Container w="800px">
                     <QuoteContainer quotes={this.state.quotes} length={this.state.quotesLength} txc={this.props.bgc} bgc={this.props.txc} changeColor={this.props.changeColor}  />
                 </Container>
             );
