@@ -13,34 +13,34 @@ id_row = 5
 num = 7
 s_row = 6
 url_row = 8
-bottun_2 = "search_btn"
-inputarea = "search_form"
+name_search_button = "search_btn"
+name_input_area = "search_form"
 bun = "search_detail"
 houkisei = "mdisc"
-colorname = "その他の名称"
+color_name = "その他の名称"
 furigana = "フリガナ"
-houNumber = "法規制番号"
+hou_number = "法規制番号"
 bn =""
-houtext=""
+hou_text=""
 def exs_input(a,b):
-    global houtext
+    global hou_text
     global bn
     hou = driver.find_elements_by_class_name(b)
     bsd = driver.find_elements_by_class_name(a)
     for i in bsd:
-        if houNumber in i.text:
+        if hou_number in i.text:
             hn=-1
-            houtext = hou[hn].text
-        else:houtext ="None"
+            hou_text = hou[hn].text
+        else:hou_text ="None"
     bsd = bsd[0].text.split('\n')
     
     for i in bsd:
-        if colorname in i:
+        if color_name in i:
             sonota = bsd.index(i)+1
         if furigana in i:
             bn = i[9:]
         else :bn =="None"
-    return bsd[sonota],bn,houtext
+    return bsd[sonota],bn,hou_text
 
 
 html = 'https://jglobal.jst.go.jp/detail?JGLOBAL_ID=200907058487000920&rel=1#%7B%22category%22%3A%227%22%2C%22keyword%22%3A%22C.I.16150%22%7D'
@@ -63,8 +63,8 @@ for i in range(df.shape[0]):
         df.iat[start_col,url_row] = df.iat[start_col-1,url_row]
         start_col +=1
         continue
-    search_bar = driver.find_element_by_class_name(inputarea)
-    search_btn = driver.find_element_by_class_name(bottun_2)
+    search_bar = driver.find_element_by_class_name(name_input_area)
+    search_btn = driver.find_element_by_class_name(name_search_btn)
 
     search_bar.clear()
     time.sleep(2)
